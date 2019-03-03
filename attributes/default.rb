@@ -19,3 +19,7 @@ default['livy']['log_size']                = "20MB"
 default['livy']['systemd']                 = "true"
 default['livy']['rsc']['rpc']['max']['size'] =  "268435456"
 default['livy']['rpc']['max']['size'] =  "268435456"
+
+
+default["livy"][:default][:public_ips]     = node["install"]["public_ips"].empty? ? ['10.0.2.15'] : node["install"]["public_ips"]  
+default["livy"][:default][:private_ips]    = node["install"]["private_ips"].empty? ? ['10.0.2.15'] : node["install"]["private_ips"]

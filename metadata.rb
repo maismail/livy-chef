@@ -56,7 +56,11 @@ attribute "livy/keystore_password",
           :type => "string"
 
 attribute "livy/default/private_ips",
-          :description => "Set ip addresses",
+          :description => "Private ip addresses",
+          :type => "array"
+
+attribute "livy/default/public_ips",
+          :description => "Public ip addresses",
           :type => "array"
 
 attribute "install/dir",
