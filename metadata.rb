@@ -9,12 +9,14 @@ source_url       "https://github.com/hopshadoop/livy-chef"
 
 
 
-depends          "hadoop_spark"
-depends          "ndb"
-depends          "hops"
-depends          "kagent"
-depends          "java"
-depends          "consul"
+depends "java", '~> 7.0.0'
+depends 'kagent'
+depends 'hops'
+depends 'ndb'
+depends 'hadoop_spark'
+depends 'conda'
+depends 'consul'
+
 
 recipe           "install", "Installs a Livy Spark REST Server"
 recipe           "default", "Starts  a Livy Spark REST Server"
