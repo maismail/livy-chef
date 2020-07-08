@@ -45,6 +45,13 @@ group node['hops']['group'] do
   not_if { node['install']['external_users'].casecmp("true") == 0 }
 end
 
+group node["kagent"]["certs_group"] do
+  action :modify
+  members node['livy']['user']
+  append true
+  not_if { node['install']['external_users'].casecmp("true") == 0 }
+end
+
 directory node["livy"]["dir"] do
   owner node["livy"]["user"]
   group node["livy"]["group"]
